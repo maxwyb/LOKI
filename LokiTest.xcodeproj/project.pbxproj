@@ -16,6 +16,7 @@
 		81EDD7731CD4780500E4795C /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDD7721CD4780500E4795C /* CentralViewController.swift */; };
 		81EDD77E1CD4A52500E4795C /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDD77D1CD4A52500E4795C /* PeripheralViewController.swift */; };
 		81EDD7801CD4A57800E4795C /* RoleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDD77F1CD4A57800E4795C /* RoleSelectionViewController.swift */; };
+		81EDD7851CD4B24800E4795C /* RemotePeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDD7841CD4B24800E4795C /* RemotePeripheralViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		81EDD7721CD4780500E4795C /* CentralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
 		81EDD77D1CD4A52500E4795C /* PeripheralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
 		81EDD77F1CD4A57800E4795C /* RoleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewController.swift; sourceTree = "<group>"; };
+		81EDD7841CD4B24800E4795C /* RemotePeripheralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePeripheralViewController.swift; sourceTree = "<group>"; };
 		DD1273E14001D25FCB470BEC /* Pods-LokiTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LokiTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-LokiTest/Pods-LokiTest.release.xcconfig"; sourceTree = "<group>"; };
 		E65428228F86DB73CDEA5430 /* Pods_LokiTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LokiTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD3E4D2C55AE8ABD6388922 /* Pods-LokiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LokiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LokiTest/Pods-LokiTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				81EDD7621CD4768B00E4795C /* ViewController.swift */,
 				81EDD7641CD4768B00E4795C /* Main.storyboard */,
 				81EDD77F1CD4A57800E4795C /* RoleSelectionViewController.swift */,
+				81EDD7841CD4B24800E4795C /* RemotePeripheralViewController.swift */,
 				81EDD77D1CD4A52500E4795C /* PeripheralViewController.swift */,
 				81EDD7721CD4780500E4795C /* CentralViewController.swift */,
 				81EDD7671CD4768B00E4795C /* Assets.xcassets */,
@@ -221,6 +224,7 @@
 			files = (
 				81EDD77E1CD4A52500E4795C /* PeripheralViewController.swift in Sources */,
 				81EDD7631CD4768B00E4795C /* ViewController.swift in Sources */,
+				81EDD7851CD4B24800E4795C /* RemotePeripheralViewController.swift in Sources */,
 				81EDD7611CD4768B00E4795C /* AppDelegate.swift in Sources */,
 				81EDD7731CD4780500E4795C /* CentralViewController.swift in Sources */,
 				81EDD7801CD4A57800E4795C /* RoleSelectionViewController.swift in Sources */,

@@ -24,7 +24,7 @@
         <!--Discover-->
         <scene sceneID="OxS-CY-o10">
             <objects>
-                <viewController id="700-4a-h3L" sceneMemberID="viewController">
+                <viewController id="700-4a-h3L" customClass="RoleSelectionViewController" customModule="LokiTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cFc-Jw-9Uf"/>
                         <viewControllerLayoutGuide type="bottom" id="R3i-Mh-L0f"/>
@@ -69,20 +69,25 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" id="fIS-un-v7g"/>
+                    <connections>
+                        <outlet property="centralButton" destination="jpx-CM-TDc" id="qdB-GT-60m"/>
+                        <outlet property="peripheralButton" destination="Aik-1i-Hei" id="5gs-Oj-5cT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9g-9I-JIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1366.5" y="439"/>
         </scene>
-        <!--Role Selection View Controller-->
+        <!--Peripheral View Controller-->
         <scene sceneID="vxg-lH-NKX">
             <objects>
-                <viewController id="eKh-7O-k1L" customClass="RoleSelectionViewController" customModule="LokiTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eKh-7O-k1L" customClass="PeripheralViewController" customModule="LokiTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8iQ-Wi-tIm"/>
                         <viewControllerLayoutGuide type="bottom" id="Mre-jy-NAs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pnF-rl-L3T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -91,15 +96,16 @@
             </objects>
             <point key="canvasLocation" x="2112" y="982"/>
         </scene>
-        <!--Discover MainVC-->
+        <!--Central View Controller-->
         <scene sceneID="zTh-kf-NFP">
             <objects>
-                <viewController id="6NZ-Ya-3ee" customClass="DiscoverMainVC" customModule="LokiTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6NZ-Ya-3ee" customClass="CentralViewController" customModule="LokiTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qg9-ZG-ZKO"/>
                         <viewControllerLayoutGuide type="bottom" id="CM7-8u-9Uf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f7W-WI-nxh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
