@@ -7,14 +7,15 @@
 //
 
 import UIKit
-
-internal class RoleSelectionViewController: UIViewController {
+class RoleSelectionViewController: UIViewController {
     
     // MARK: Properties
     
     private let offset = CGFloat(20)
 
+    @IBOutlet weak var centralButton: UIButton!
      
+    @IBOutlet weak var peripheralButton: UIButton!
     // MARK: UIViewController Life Cycle
     
     internal override func viewDidLoad() {
@@ -37,6 +38,7 @@ internal class RoleSelectionViewController: UIViewController {
         }
     }
     
+    /*
     private func applyConstraints() {
         centralButton.snp_makeConstraints { make in
             make.top.equalTo(snp_topLayoutGuideBottom).offset(offset)
@@ -50,6 +52,7 @@ internal class RoleSelectionViewController: UIViewController {
             make.bottom.equalTo(view).offset(-offset)
         }
     }
+
     
     // MARK: Target Actions
     
@@ -60,5 +63,6 @@ internal class RoleSelectionViewController: UIViewController {
             navigationController?.pushViewController(PeripheralViewController(), animated: true)
         }
     }
+    */
     
 }

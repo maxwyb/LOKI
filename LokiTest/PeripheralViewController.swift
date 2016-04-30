@@ -10,11 +10,9 @@ import UIKit
 import BluetoothKit
 import CoreLocation
 
-internal class PeripheralViewController: UIViewController, AvailabilityViewController, BKPeripheralDelegate, LoggerDelegate, CLLocationManagerDelegate {
+internal class PeripheralViewController: UIViewController, BKPeripheralDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
-    
-    internal var availabilityView = AvailabilityView()
     
     private let peripheral = BKPeripheral()
     private let logTextView = UITextView()
@@ -34,12 +32,12 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
         }
         navigationItem.title = "Peripheral"
         view.backgroundColor = UIColor.whiteColor()
-        Logger.delegate = self
-        applyAvailabilityView()
-        logTextView.editable = false
-        logTextView.alwaysBounceVertical = true
-        view.addSubview(logTextView)
-        applyConstraints()
+        //Logger.delegate = self
+        //applyAvailabilityView()
+        //logTextView.editable = false
+        //logTextView.alwaysBounceVertical = true
+        //view.addSubview(logTextView)
+        //applyConstraints()
         startPeripheral()
         sendDataBarButtonItem.enabled = false
         navigationItem.rightBarButtonItem = sendDataBarButtonItem
@@ -82,6 +80,7 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
     
     
     // MARK: Functions
+    /*
     private func applyConstraints() {
         logTextView.snp_makeConstraints { make in
             make.top.equalTo(snp_topLayoutGuideBottom)
@@ -89,7 +88,7 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
             make.bottom.equalTo(availabilityView.snp_top)
         }
     }
-    
+    */
     //This is where the friend starts to look for friend requests
     private func startPeripheral() {
         do {
@@ -100,7 +99,7 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
             let localName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as? String
             let configuration = BKPeripheralConfiguration(dataServiceUUID: dataServiceUUID, dataServiceCharacteristicUUID: dataServiceCharacteristicUUID, localName: localName)
             try peripheral.startWithConfiguration(configuration)
-            Logger.log("Awaiting connections from remote centrals")
+            print("Awaiting connections from remote centrals")
         } catch let error {
             print("Error starting: \(error)")
         }
@@ -115,13 +114,13 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
         //Logger.log("Prepared \(numberOfBytesToSend) bytes with MD5 hash: \(data.md5()!.hexString)")
         let data = NSKeyedArchiver.archivedDataWithRootObject(currlocation)
         for remoteCentral in peripheral.connectedRemoteCentrals {
-            Logger.log("Sending to \(remoteCentral)")
+            print("Sending to \(remoteCentral)")
             peripheral.sendData(data, toRemoteCentral: remoteCentral) { data, remoteCentral, error in
                 guard error == nil else {
-                    Logger.log("Failed sending to \(remoteCentral)")
+                    print("Failed sending to \(remoteCentral)")
                     return
                 }
-                Logger.log("Sent to \(remoteCentral)")
+                print("Sent to \(remoteCentral)")
                 
             }
         }
@@ -131,12 +130,12 @@ internal class PeripheralViewController: UIViewController, AvailabilityViewContr
     
     //Sent by peripheral when the friend request is successfully sent; user is added to contacts
     internal func peripheral(peripheral: BKPeripheral, remoteCentralDidConnect remoteCentral: BKRemoteCentral) {
-        Logger.log("Remote central did connect: \(remoteCentral)")
+        print("Remote central did connect: \(remoteCentral)")
         sendDataBarButtonItem.enabled = true
     }
     
     internal func peripheral(peripheral: BKPeripheral, remoteCentralDidDisconnect remoteCentral: BKRemoteCentral) {
-        Logger.log("Remote central did disconnect: \(remoteCentral)")
+        print("Remote central did disconnect: \(remoteCentral)")
         sendDataBarButtonItem.enabled = false
     }
     

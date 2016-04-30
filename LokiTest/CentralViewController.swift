@@ -26,12 +26,10 @@ import UIKit
 import BluetoothKit
 import CoreBluetooth
 
-internal class CentralViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BKCentralDelegate, AvailabilityViewController, RemotePeripheralViewControllerDelegate {
+internal class CentralViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BKCentralDelegate, RemotePeripheralViewControllerDelegate {
     
     // MARK: Properties
-    
-    internal var availabilityView = AvailabilityView()
-    
+        
     private var activityIndicator: UIActivityIndicatorView {
         return activityIndicatorBarButtonItem.customView as! UIActivityIndicatorView
     }
@@ -49,12 +47,12 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
         activityIndicator.color = UIColor.blackColor()
         navigationItem.title = "Central"
         navigationItem.rightBarButtonItem = activityIndicatorBarButtonItem
-        applyAvailabilityView()
+        //applyAvailabilityView()
         discoveriesTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: discoveriesTableViewCellIdentifier)
         discoveriesTableView.dataSource = self
         discoveriesTableView.delegate = self
         view.addSubview(discoveriesTableView)
-        applyConstraints()
+        //applyConstraints()
         startCentral()
     }
     
@@ -72,6 +70,7 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
     
     // MARK: Functions
     
+    /*
     private func applyConstraints() {
         discoveriesTableView.snp_makeConstraints { make in
             make.top.equalTo(snp_topLayoutGuideBottom)
@@ -79,7 +78,7 @@ internal class CentralViewController: UIViewController, UITableViewDataSource, U
             make.bottom.equalTo(availabilityView.snp_top)
         }
     }
-    
+    */
     private func startCentral() {
         do {
             central.delegate = self
